@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  dbgces:
+    image: postgres
+    container_name: dbgces
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - "dbgcesdata:/var/lib/postgresql/data"
+
+volumes:
+  dbgcesdata:
