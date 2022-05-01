@@ -28,6 +28,10 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 3.0.0
+      - name: Bundle install
+        run: |
+          cd aplicacao/
+          bundle install
       # Add or replace database setup steps here
       - name: Set up database schema
         run: |
@@ -57,6 +61,10 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 3.0.0
+      - name: Bundle install
+        run: |
+          cd aplicacao/
+          bundle install
       # Add or replace database setup steps here
       - name: Set up database schema
         run: rails db:reset
@@ -73,6 +81,10 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: 3.0.0
+      - name: Bundle install
+        run: |
+          cd aplicacao/
+          bundle install
       # Add or replace any other lints here
       - name: Security audit dependencies
         run: bin/bundler-audit --update
