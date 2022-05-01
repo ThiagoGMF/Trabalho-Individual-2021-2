@@ -85,21 +85,21 @@ jobs:
         run: |
           cd aplicacao/
           bundle install
-      - name: Insttall gems
+      - name: Install gems
         run: |
           gem install bundler-audit
           gem install brakeman
           gem install rubocop
       # Add or replace any other lints here
+      - name: Security audit application code
+        run: |
+          cd aplicacao/
+          brakeman -q -w2
+      - name: Lint Ruby files
+        run: |
+          cd aplicacao/
+          rubocop --parallel
       - name: Security audit dependencies
         run: |
           cd aplicacao/
           bundler-audit --update
-      - name: Security audit application code
-        run: |
-          cd aplicacao/
-          bin/brakeman -q -w2
-      - name: Lint Ruby files
-        run: |
-          cd aplicacao/
-          bin/rubocop --parallel
