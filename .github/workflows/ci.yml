@@ -72,6 +72,7 @@ jobs:
         run: rspec
 
   lint:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
