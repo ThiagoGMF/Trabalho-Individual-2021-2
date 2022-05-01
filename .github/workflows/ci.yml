@@ -45,13 +45,9 @@ jobs:
           POSTGRES_DB: biblioteca_pessoal_test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-      env:
-        RAILS_ENV: test
-        DATABASE_URL: "postgres://rails:password@localhost:5432/biblioteca_pessoal_test"
-        options: --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://rails:password@localhost:5432/biblioteca_pessoal_test"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
