@@ -96,11 +96,11 @@ jobs:
         run: |
           cd aplicacao/
           brakeman -q -w2
-      - name: Lint Ruby files
-        run: |
-          cd aplicacao/
-          rubocop --parallel
       - name: Security audit dependencies
         run: |
           cd aplicacao/
           bundler-audit --update
+      - name: Lint Ruby files
+        run: |
+          cd aplicacao/
+          rubocop --lint
